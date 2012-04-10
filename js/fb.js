@@ -3,17 +3,17 @@ $(document).ready(function(){
     $(".popover").hide();
 
     md.preventDefault();
-    var tops;
-    var mouseX = md.pageX;
-    var mouseY = md.pageY;
-    var $temp;
-    var timeout;
-    var $this = $(this);
-    var delays = {
-      main: 0,
-      form: 120
-    }
-    var type;
+    var tops,
+        mouseX = md.pageX,
+        mouseY = md.pageY,
+        $temp,
+        timeout,
+        $this = $(this),        
+        delays = {
+          main: 0,
+          form: 120
+        },
+        type;
 
     if($this.parent().parent().parent().parent().attr("id") === "components"){
       type = "main";
@@ -37,16 +37,16 @@ $(document).ready(function(){
                  "left"     : mouseX - ($temp.width()/2) + "px",
                  "opacity"  : "0.9"}).show()
 
-      var half_box_height = ($temp.height()/2);
-      var half_box_width = ($temp.width()/2);
-      var $target = $("#target");
-      var tar_pos = $target.position();
-      var $target_component = $("#target .component");
+      var half_box_height = ($temp.height()/2),
+          half_box_width = ($temp.width()/2),
+          $target = $("#target"),
+          tar_pos = $target.position(),
+          $target_component = $("#target .component");
 
       $(document).delegate("body", "mousemove", function(mm){
 
-        var mm_mouseX = mm.pageX;
-        var mm_mouseY = mm.pageY;
+        var mm_mouseX = mm.pageX,
+            mm_mouseY = mm.pageY;
 
         $temp.css({"top"      : mm_mouseY - half_box_height + "px",
           "left"      : mm_mouseX - half_box_width  + "px"});
@@ -78,9 +78,9 @@ $(document).ready(function(){
       $("body").delegate("#temp", "mouseup", function(mu){
         mu.preventDefault();
 
-        var mu_mouseX = mu.pageX;
-        var mu_mouseY = mu.pageY;
-        var tar_pos = $target.position();
+        var mu_mouseX = mu.pageX,
+            mu_mouseY = mu.pageY,
+            tar_pos = $target.position();
 
         $("#target .component").css({"border-top" : "1px solid white", "border-bottom" : "none"});
 
