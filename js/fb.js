@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){                                                                                                                                                                                                                                                                                                         alert('test');
   $("form").delegate(".component", "mousedown", function(md){
     $(".popover").hide();
 
